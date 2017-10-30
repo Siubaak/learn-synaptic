@@ -1,0 +1,27 @@
+{
+  "name": "learn-synaptic",
+  "version": "1.0.0",
+  "description": "learn to use synaptic",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Siubaak/learn-synaptic.git"
+  },
+  "keywords": [
+    "synaptic",
+    "machine learning",
+    "deep learning"
+  ],
+  "author": "Siubaak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Siubaak/learn-synaptic/issues"
+  },
+  "homepage": "https://github.com/Siubaak/learn-synaptic#readme",
+  "dependencies": {
+    "synaptic": "^1.1.4"
+  }
+}
