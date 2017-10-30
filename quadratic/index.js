@@ -1,7 +1,7 @@
 const { Layer, Network, Trainer, Neuron } = require('synaptic')
 
 const ip = new Layer(1)
-const h1 = new Layer(10)
+const h1 = new Layer(16)
 const op = new Layer(1)
 
 ip.set({
@@ -11,7 +11,7 @@ h1.set({
   squash: Neuron.squash.RELU
 })
 op.set({
-  squash: Neuron.squash.RELU
+  squash: Neuron.squash.IDENTITY
 })
 
 ip.project(h1)
@@ -25,7 +25,7 @@ const net = new Network({
 
 const trainingSet = []
 for (let i = 0; i < 100; i ++) {
-  const x = Math.random()
+  const x = Math.random() * 2 - 1
   trainingSet.push({
     input: [x],
     output: [x*x]
@@ -34,11 +34,11 @@ for (let i = 0; i < 100; i ++) {
 
 const trainer = new Trainer(net)
 trainer.train(trainingSet, {
-	rate: 0.03,
+	rate: 0.02,
   error: 0.00001,
-  iterations: 50000,
+  iterations: 20000,
   shuffle: true,
-  log: 10000,
+  log: 4000,
 	cost: Trainer.cost.MSE
 })
 
